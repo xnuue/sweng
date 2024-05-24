@@ -15,6 +15,8 @@ let check = () => {
   // Check email verification within UserCreds (assuming "emailVerified" exists)
   if (UserCreds && !UserCreds.emailVerified) {
     alert("Please verify your email before logging in.")
+    sessionStorage.removeItem("user-creds");
+    sessionStorage.removeItem("user-info");
     window.location.href = 'login.html';
 
   } else {
