@@ -2,7 +2,7 @@
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
     import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
-    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
+    import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -30,21 +30,26 @@
 
     let RegisterUser = evt => {
       evt.preventDefault();
-
+    
       createUserWithEmailAndPassword(auth, em.value, pass.value)
         .then(async (credentials) => {
+          // Send email verification
+          await sendEmailVerification(auth.currentUser);
+    
+          // Store user data in Firestore
           var ref = doc(db, "UserAuthList", credentials.user.uid);
           await setDoc(ref, {
             name: name.value,
-            email: em
+            email: em.value
           });
-          alert("Account created!");
+    
+          alert("Account created! Please verify your email before logging in. Check your inbox or spam folder.");
           window.location.href = "login.html";
         })
         .catch((error) => {
           alert(error.message);
-          console.log(error.code);
-          console.log(error.message);
+          console.error(error.code);
+          console.error(error.message);
         })
     }
     MainForm.addEventListener('submit', RegisterUser);

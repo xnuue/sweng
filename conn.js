@@ -12,14 +12,14 @@ let signout = () => {
 }
 
 let check = () => {
-  if (!sessionStorage.getItem("user-creds"))
+  if (!sessionStorage.getItem("isVerified")) {
+    alert("Please verify your account!")
     window.location.href = 'login.html'
 
-  else {
-    console.log("Mga walang ambag:")
-    console.log("Christian Palacio")
+  } else {
     console.log("written with blood tears and sweat")
     console.log("https://facebook.com/senn2k")
+    console.log(UserCreds)
     who.innerText = `${UserInfo.name}`;
     wc.innerText = `Welcome ${UserInfo.name}!`;
   }
