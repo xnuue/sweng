@@ -18,27 +18,22 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Function to fetch data from Firestore and populate the table
-async function populateTable() {
+// Function to fetch data from Firestore and update the member count
+async function updateMemberCount() {
     try {
         const querySnapshot = await getDocs(collection(db, "UserAuthList"));
-        const tableBody = document.getElementById("userList").getElementsByTagName('tbody')[0];
+        let memberCount = 0; // Initialize member count variable
 
         querySnapshot.forEach((doc) => {
-            const data = doc.data();
-            const name = data.name;
-            const email = data.email;
-
-            const newRow = tableBody.insertRow(tableBody.rows.length);
-            const cell1 = newRow.insertCell(0);
-            const cell2 = newRow.insertCell(1);
-            cell1.textContent = name;
-            cell2.textContent = email;
+            memberCount++; // Increment member count for each document
         });
+
+        // Update the member count in the info box
+        document.getElementById("count").textContent = memberCount;
     } catch (error) {
-        console.error("Error fetching and populating data:", error);
+        console.error("Error fetching and updating member count:", error);
     }
 }
 
-// Call the function to populate the table when the page loads
-window.onload = populateTable;
+// Call the function to update the member count when the page loads
+window.onload = updateMemberCount;

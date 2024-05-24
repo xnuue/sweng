@@ -132,39 +132,51 @@
               </ol>
             </div><!-- /.col -->
           </div><!-- /.row -->
-          <div class="row">
-            <div class="col-md-3 col-sm-6 col-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-info"><i class="far fa-user"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">Members</span>
-                  <span class="info-box-number">0</span>
-                </div>
-                <!-- /.info-box-content -->
-              </div>
-              <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-            <div class="col-md-3 col-sm-6 col-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-success"><i class="far fa-clock"></i></span>
 
-                <div class="info-box-content">
-                  <span class="info-box-text">Pendings</span>
-                  <span class="info-box-number">0</span>
-                </div>
-                <!-- /.info-box-content -->
-              </div>
-              <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-            <!-- /.col -->
-          </div>
         </div><!-- /.container-fluid -->
       </div>
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Registered Users</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <div id="userList_wrapper" class="dataTables_wrapper dt-bootstrap4">
+            <div class="row">
+              <div class="col-sm-12">
+                <table id="userList" class="table table-bordered table-hover dataTable dtr-inline"
+                  aria-describedby="userList_info">
+                  <thead>
+                    <tr>
+                      <th class="sorting sorting_asc" tabindex="0" aria-controls="userList" rowspan="1" colspan="1"
+                        aria-sort="ascending" aria-label="Name: activate to sort column descending">Email</th>
+                      <th class="sorting" tabindex="0" aria-controls="userList" rowspan="1" colspan="1"
+                        aria-label="Email: activate to sort column ascending">Name</th>
+                      <th class="sorting sorting_asc" tabindex="0" aria-controls="userList" rowspan="1" colspan="1"
+                        aria-sort="ascending" aria-label="Name: activate to sort column descending">Description</th>
+                      <th class="sorting" tabindex="0" aria-controls="userList" rowspan="1" colspan="1"
+                        aria-label="Email: activate to sort column ascending">Payment Method</th>
+                      <th class="sorting" tabindex="0" aria-controls="userList" rowspan="1" colspan="1"
+                        aria-label="Email: activate to sort column ascending">Service Chosen</th>
+                      <th class="sorting" tabindex="0" aria-controls="userList" rowspan="1" colspan="1"
+                        aria-label="Email: activate to sort column ascending">Status</th>
+                      <th class="sorting" tabindex="0" aria-controls="userList" rowspan="1" colspan="1"
+                        aria-label="Email: activate to sort column ascending">Timeframe</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- User data will be dynamically added here -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.card-body -->
+      </div>
       <!-- /.content-header -->
-      <script src="conn.js">
-      </script>
+      <script src="conn.js"></script>
+      <script type="module" src="pendings.js"></script>
 
 
       <!-- Control Sidebar -->
@@ -172,25 +184,6 @@
         <!-- Control sidebar content goes here -->
       </aside>
       <!-- /.control-sidebar -->
-
-      <!-- REQUIRED SCRIPTS -->
-      <!-- jQuery -->
-      <script src="plugins/jquery/jquery.min.js"></script>
-      <!-- Bootstrap -->
-      <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <!-- overlayScrollbars -->
-      <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-      <!-- AdminLTE App -->
-      <script src="dist/js/adminlte.js"></script>
-
-      <!-- PAGE PLUGINS -->
-      <!-- jQuery Mapael -->
-      <script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-      <script src="plugins/raphael/raphael.min.js"></script>
-      <script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
-      <script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
-      <!-- ChartJS -->
-      <script src="plugins/chart.js/Chart.min.js"></script>
 
 </body>
 

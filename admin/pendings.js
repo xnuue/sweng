@@ -21,19 +21,34 @@ const db = getFirestore(app);
 // Function to fetch data from Firestore and populate the table
 async function populateTable() {
     try {
-        const querySnapshot = await getDocs(collection(db, "UserAuthList"));
+        const querySnapshot = await getDocs(collection(db, "bookings"));
         const tableBody = document.getElementById("userList").getElementsByTagName('tbody')[0];
 
         querySnapshot.forEach((doc) => {
             const data = doc.data();
-            const name = data.name;
-            const email = data.email;
+            const clientemail = data.clientemail;
+            const clientname = data.clientname;
+            const description = data.description;
+            const paymentMethod = data.paymentMethod;
+            const service = data.service;
+            const status = data.status;
+            const timeframe = data.timeframe;
 
             const newRow = tableBody.insertRow(tableBody.rows.length);
             const cell1 = newRow.insertCell(0);
             const cell2 = newRow.insertCell(1);
-            cell1.textContent = name;
-            cell2.textContent = email;
+            const cell3 = newRow.insertCell(2);
+            const cell4 = newRow.insertCell(3);
+            const cell5 = newRow.insertCell(4);
+            const cell6 = newRow.insertCell(5);
+            const cell7 = newRow.insertCell(6);
+            cell1.textContent = clientemail;
+            cell2.textContent = clientname;
+            cell3.textContent = description;
+            cell4.textContent = paymentMethod;
+            cell5.textContent = service;
+            cell6.textContent = status;
+            cell7.textContent = timeframe;
         });
     } catch (error) {
         console.error("Error fetching and populating data:", error);
