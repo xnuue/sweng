@@ -18,7 +18,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Function to fetch data from Firestore and populate the table
 async function populateTable() {
     try {
         const querySnapshot = await getDocs(collection(db, "bookings"));
@@ -49,6 +48,11 @@ async function populateTable() {
             cell5.textContent = service;
             cell6.textContent = status;
             cell7.textContent = timeframe;
+
+            // Check if status is "done" and add a class to the row for styling
+            if (status.toLowerCase() === "done") {
+                newRow.classList.add("done-status");
+            }
         });
     } catch (error) {
         console.error("Error fetching and populating data:", error);

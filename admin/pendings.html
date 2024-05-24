@@ -16,7 +16,12 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
 </head>
-
+<style>
+  .done-status {
+    background-color: #035316; /* Light green background color */
+    color: #c7d6ca; /* Dark green text color */
+}
+</style>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
   <div class="wrapper">
     <!-- Navbar -->
@@ -102,14 +107,6 @@
                 </p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="services.html" class="nav-link">
-                <i class="nav-icon fas fa-columns"></i>
-                <p>
-                  Services
-                </p>
-              </a>
-            </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
@@ -127,8 +124,8 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Main</li>
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Pendings</li>
               </ol>
             </div><!-- /.col -->
           </div><!-- /.row -->
@@ -137,43 +134,36 @@
       </div>
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Registered Users</h3>
+            <h3 class="card-title">Registered Users</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-          <div id="userList_wrapper" class="dataTables_wrapper dt-bootstrap4">
-            <div class="row">
-              <div class="col-sm-12">
-                <table id="userList" class="table table-bordered table-hover dataTable dtr-inline"
-                  aria-describedby="userList_info">
-                  <thead>
-                    <tr>
-                      <th class="sorting sorting_asc" tabindex="0" aria-controls="userList" rowspan="1" colspan="1"
-                        aria-sort="ascending" aria-label="Name: activate to sort column descending">Email</th>
-                      <th class="sorting" tabindex="0" aria-controls="userList" rowspan="1" colspan="1"
-                        aria-label="Email: activate to sort column ascending">Name</th>
-                      <th class="sorting sorting_asc" tabindex="0" aria-controls="userList" rowspan="1" colspan="1"
-                        aria-sort="ascending" aria-label="Name: activate to sort column descending">Description</th>
-                      <th class="sorting" tabindex="0" aria-controls="userList" rowspan="1" colspan="1"
-                        aria-label="Email: activate to sort column ascending">Payment Method</th>
-                      <th class="sorting" tabindex="0" aria-controls="userList" rowspan="1" colspan="1"
-                        aria-label="Email: activate to sort column ascending">Service Chosen</th>
-                      <th class="sorting" tabindex="0" aria-controls="userList" rowspan="1" colspan="1"
-                        aria-label="Email: activate to sort column ascending">Status</th>
-                      <th class="sorting" tabindex="0" aria-controls="userList" rowspan="1" colspan="1"
-                        aria-label="Email: activate to sort column ascending">Timeframe</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <!-- User data will be dynamically added here -->
-                  </tbody>
-                </table>
-              </div>
+            <div id="userList_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table id="userList" class="table table-bordered table-hover dataTable dtr-inline"
+                            aria-describedby="userList_info">
+                            <thead>
+                                <tr>
+                                    <th>Email</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Payment Method</th>
+                                    <th>Service Chosen</th>
+                                    <th>Status</th>
+                                    <th>Timeframe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- User data will be dynamically added here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
         <!-- /.card-body -->
-      </div>
+    </div>
       <!-- /.content-header -->
       <script src="conn.js"></script>
       <script type="module" src="pendings.js"></script>

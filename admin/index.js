@@ -14,26 +14,32 @@ const firebaseConfig = {
     measurementId: "G-34Z8ED88VY"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Function to fetch data from Firestore and update the member count
-async function updateMemberCount() {
+async function updateCounts() {
     try {
-        const querySnapshot = await getDocs(collection(db, "UserAuthList"));
-        let memberCount = 0; // Initialize member count variable
-
-        querySnapshot.forEach((doc) => {
-            memberCount++; // Increment member count for each document
+        // Update member count
+        const memberQuerySnapshot = await getDocs(collection(db, "UserAuthList"));
+        let memberCount = 0; 
+        memberQuerySnapshot.forEach((doc) => {
+            memberCount++; 
         });
-
-        // Update the member count in the info box
         document.getElementById("count").textContent = memberCount;
+
+        // Update booking count, skipping 'done' bookings
+        const bookingQuerySnapshot = await getDocs(collection(db, "bookings"));
+        let bookingCount = 0; 
+        bookingQuerySnapshot.forEach((doc) => {
+            const bookingData = doc.data();
+            if (bookingData.status !== "done") {
+                bookingCount++; 
+            }
+        });
+        document.getElementById("pcount").textContent = bookingCount;
     } catch (error) {
-        console.error("Error fetching and updating member count:", error);
+        console.error(error);
     }
 }
 
-// Call the function to update the member count when the page loads
-window.onload = updateMemberCount;
+window.onload = updateCounts;
