@@ -11,7 +11,6 @@ let signout = () => {
   window.location.href = 'login.html'
 }
 
-
 let check = () => {
   // Check email verification within UserCreds (assuming "emailVerified" exists)
   if (UserCreds && !UserCreds.emailVerified) {
