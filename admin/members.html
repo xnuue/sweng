@@ -138,105 +138,39 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                <div class="row">
-                  <div class="col-sm-12 col-md-6"></div>
-                  <div class="col-sm-12 col-md-6"></div>
-                </div>
+              <div id="userList_wrapper" class="dataTables_wrapper dt-bootstrap4">
                 <div class="row">
                   <div class="col-sm-12">
-                    <table id="example2" class="table table-bordered table-hover dataTable dtr-inline"
-                      aria-describedby="example2_info">
+                    <table id="userList" class="table table-bordered table-hover dataTable dtr-inline"
+                      aria-describedby="userList_info">
                       <thead>
                         <tr>
-                          <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                            aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">
-                            Name</th>
-                          <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                            aria-label="Browser: activate to sort column ascending">Email</th>
+                          <th class="sorting sorting_asc" tabindex="0" aria-controls="userList" rowspan="1" colspan="1"
+                            aria-sort="ascending" aria-label="Name: activate to sort column descending">Name</th>
+                          <th class="sorting" tabindex="0" aria-controls="userList" rowspan="1" colspan="1"
+                            aria-label="Email: activate to sort column ascending">Email</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr class="odd">
-                          <td class="dtr-control sorting_1" tabindex="0">Gecko</td>
-                          <td>Firefox 1.0</td>
-                        </tr>
-                        <tr class="even">
-                          <td class="dtr-control sorting_1" tabindex="0">Gecko</td>
-                          <td>Firefox 1.5</td>
-                        </tr>
-                        <tr class="odd">
-                          <td class="dtr-control sorting_1" tabindex="0">Gecko</td>
-                          <td>Firefox 2.0</td>
-                        </tr>
-                        <tr class="even">
-                          <td class="dtr-control sorting_1" tabindex="0">Gecko</td>
-                          <td>Firefox 3.0</td>
-                        </tr>
-                        <tr class="odd">
-                          <td class="sorting_1 dtr-control">Gecko</td>
-                          <td>Camino 1.0</td>
-                        </tr>
-                        <tr class="even">
-                          <td class="sorting_1 dtr-control">Gecko</td>
-                          <td>Camino 1.5</td>
-                        </tr>
-                        <tr class="odd">
-                          <td class="sorting_1 dtr-control">Gecko</td>
-                          <td>Netscape 7.2</td>
-                        </tr>
-                        <tr class="even">
-                          <td class="sorting_1 dtr-control">Gecko</td>
-                          <td>Netscape Browser 8</td>
-                        </tr>
-                        <tr class="odd">
-                          <td class="sorting_1 dtr-control">Gecko</td>
-                          <td>Netscape Navigator 9</td>
-                        </tr>
-                        <tr class="even">
-                          <td class="sorting_1 dtr-control">Gecko</td>
-                          <td>Mozilla 1.0</td>
-                        </tr>
+                        <!-- User data will be dynamically added here -->
                       </tbody>
                     </table>
                   </div>
                 </div>
-                
               </div>
             </div>
             <!-- /.card-body -->
           </div>
-        </div><!-- /.container-fluid -->
-      </div>
-      <!-- /.content-header -->
-      <script src="conn.js">
-      </script>
+          <!-- /.content-header -->
+          <script src="conn.js"></script>
+          <script type="module" src="members.js"></script>
+          <!-- Control Sidebar -->
+          <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+          </aside>
+          <!-- /.control-sidebar -->
 
-
-      <!-- Control Sidebar -->
-      <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-      </aside>
-      <!-- /.control-sidebar -->
-
-      <!-- REQUIRED SCRIPTS -->
-      <!-- jQuery -->
-      <script src="plugins/jquery/jquery.min.js"></script>
-      <!-- Bootstrap -->
-      <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <!-- overlayScrollbars -->
-      <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-      <!-- AdminLTE App -->
-      <script src="dist/js/adminlte.js"></script>
-
-      <!-- PAGE PLUGINS -->
-      <!-- jQuery Mapael -->
-      <script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-      <script src="plugins/raphael/raphael.min.js"></script>
-      <script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
-      <script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
-      <!-- ChartJS -->
-      <script src="plugins/chart.js/Chart.min.js"></script>
+          <!-- jQuery Mapael -->
 
 </body>
 
